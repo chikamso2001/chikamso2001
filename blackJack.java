@@ -239,7 +239,8 @@ public class blackJack{
                     System.exit(0);
                 }else if(yourCardValue < 21){
                     continue;
-                }continue;
+                }
+
             }else if(choice.equals("stay")){
                 System.out.println("Dealer's turn\n");
                 System.out.println("The dealer's cards are ");
@@ -251,13 +252,10 @@ public class blackJack{
                 while(true){
                     if(dealersTotalCardValue < 17){
                         String dealerNewCard1 = randomCards();
-                        String dealerNewcard2 = randomCards();
 
-                        System.out.println("The dealer cards are");
+                        System.out.println("The dealer cards is");
                         System.out.println(dealerNewCard1);
-                        System.out.println("and");
-                        System.out.println(dealerNewcard2);
-                        dealersTotalCardValue += (cardValue(dealerNewCard1) + cardValue(dealerNewcard2));
+                        dealersTotalCardValue += cardValue(dealerNewCard1);
                         System.out.println("Dealer's total is "+ dealersTotalCardValue);
                         continue;
 
@@ -287,7 +285,6 @@ public class blackJack{
                 break;
             }
         }
-        scan.close();
         return response;
     }
 }
